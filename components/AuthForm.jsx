@@ -16,7 +16,7 @@ import { AuthContext } from '@/context/authContext'
 import { useToast } from './ui/use-toast'
 
 const formSchema = z.object({
-    email: z.string().optional().min(1, { message: "Email is required" }).email({ message: "Invalid email format" }),
+    email: z.string().optional(),
     username: z.string().min(4, { message: "Username is required and must be at least 4 characters long" }),
     password: z.string().min(5, { message: "Password is required and must be at least 5 characters long" }),
 }).refine(data => {
