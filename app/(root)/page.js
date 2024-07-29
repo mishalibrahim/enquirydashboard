@@ -55,7 +55,7 @@ export default function Home() {
       ):(
         <div className='flex flex-col gap-1.5'>
         <p>You must be logged in to add an enquiry.</p>
-        <Button asChild>
+        <Button asChild className='bg-gradient w-max'>
           <Link href='/sign-in'>Sign in</Link>
         </Button>
         </div>

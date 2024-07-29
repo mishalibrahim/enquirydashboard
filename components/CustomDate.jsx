@@ -20,9 +20,8 @@ export function CustomDate({ control, name, label, placeholder}) {
         <FormField
             control={control}
             name={name}
-            render={({ field }) => {
-                return(
-                    <div className='flex flex-col gap-1.5 w-full'>
+            render={({ field }) => (
+                <div className='flex flex-col gap-1.5 w-full'>
                     <FormLabel className='form-label'>{label}</FormLabel>
                     <FormControl>
                         <Popover>
@@ -36,7 +35,7 @@ export function CustomDate({ control, name, label, placeholder}) {
                                 >
                                     {/* <CalendarIcon className="mr-2 h-4 w-4" /> */}
                                     <Image src='/assets/images/calendar.png' width={24} height={24} className="mr-2" alt="calendericon"/>
-                                    {field.value ? 
+                                  {field.value ? 
                                         (field.value instanceof Date && !isNaN(field.value.getTime()) 
                                             ? format(field.value, "PPP") 
                                             : <span>{placeholder}</span>) 
@@ -55,9 +54,7 @@ export function CustomDate({ control, name, label, placeholder}) {
                     </FormControl>
                     <FormMessage className='form-message' />
                 </div>
-                )
-                
-            }}
+            )}
         />
 
     )
